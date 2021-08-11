@@ -17,7 +17,7 @@ onLoadCartNumbers();
 
 function getProduct(productId) {
     var request = new XMLHttpRequest();
-    request.onreadystatechange = function () {
+    request.onreadystatechange = function() {
         if (this.readyState == XMLHttpRequest.DONE && this.status == 200) {
             var response = JSON.parse(this.responseText);
             const result = response.filter(item => item._id === productId);
@@ -35,7 +35,7 @@ function getProduct(productId) {
             totalProduct.innerHTML = `<p class="total col-md-12 col-sm-12">(${tableauPanier.length} articles) Sous-total : ${((total / 100).toFixed(2)).toString().replace(".", ",")} €</p>`
         }
     };
-    request.open("GET", "http://localhost:3000/api/teddies");
+    request.open("GET", "https://toy-store1.herokuapp.com/api/teddies");
     request.send();
 }
 
@@ -51,7 +51,7 @@ function deleteItem(product) {
 
 function removeItem(product) {
     let panier = JSON.parse(localStorage.getItem("products"));
-    var removeIndex = panier.map(function (item) { return item.id; }).indexOf(product);
+    var removeIndex = panier.map(function(item) { return item.id; }).indexOf(product);
     panier.splice(removeIndex, 1);
     localStorage.setItem("products", [JSON.stringify(panier)]);
 }
@@ -75,8 +75,7 @@ for (var i = 0; i < tableauPanier.length; i++) {
     let key = tableauPanier[i].id;
     if (key in quantity) {
         quantity[key] += 1;
-    }
-    else {
+    } else {
         getProduct(key);
         quantity[key] = 1;
     }
@@ -147,9 +146,11 @@ function validation() {
 function isName(name) {
     return /^[a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+([-'\s][a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+)?$/.test(name);
 }
+
 function isEmail(email) {
     return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
 }
+
 function isAddress(address) {
     return /[0-9]{1,3}(?:(?:[,. ]){1}[-a-zA-Zàâäéèêëïîôöùûüç]+)*/.test(address);
 }
@@ -195,9 +196,9 @@ function send() {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(opts)
-    }).then(function (response) {
+    }).then(function(response) {
         return response.json();
-    }).then(function (data) {
+    }).then(function(data) {
         localStorage.setItem("orderId", [JSON.stringify(data.orderId)]);
         localStorage.setItem("total", [JSON.stringify(total)]);
         document.location.href = "confirmation.html";
@@ -216,8 +217,3 @@ function displayForm() {
 
 displayForm();
 onLoadCartNumbers();
-
-
-
-
-

@@ -12,7 +12,7 @@ let id = url.split('=');
 
 function description() {
     var request = new XMLHttpRequest();
-    request.onreadystatechange = function () {
+    request.onreadystatechange = function() {
         if (this.readyState == XMLHttpRequest.DONE && this.status == 200) {
             var response = JSON.parse(this.responseText);
             imgDescription.innerHTML = `<img class="description-image col-md-12 col-sm-11" src="${response.imageUrl}" />`;
@@ -24,7 +24,7 @@ function description() {
             }
         }
     };
-    request.open("GET", `http://localhost:3000/api/teddies/${url.slice(4, 35)}`);
+    request.open("GET", `https://toy-store1.herokuapp.com/api/teddies/${url.slice(4, 35)}`);
     request.send();
 }
 
@@ -41,7 +41,7 @@ carts.addEventListener('click', () => {
 /* Ajout du produit au panier */
 
 function saveItems(productId) {
-    
+
     let productQuantity = document.getElementById('quantity').value;
     let panier = JSON.parse(localStorage.getItem("products")) || [];
     var informationsObjet = {
@@ -64,8 +64,8 @@ function saveItems(productId) {
 // Sélection de la quantité de produit
 
 var select = '';
-for (i=1;i<=10;i++){
+for (i = 1; i <= 10; i++) {
     select += '<option val=' + i + '>' + i + '</option>';
 }
- quantity.innerHTML = select;
-onLoadCartNumbers(); 
+quantity.innerHTML = select;
+onLoadCartNumbers();
