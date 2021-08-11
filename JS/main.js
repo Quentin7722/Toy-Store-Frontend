@@ -10,7 +10,7 @@ function index() {
             for (let i = 0; i < response.length; i++) {
                 let item = response[i];
                 listproduct.innerHTML += `
-                <a class="col-sm-12 col-md-10 col-lg-4 product-link" href="Product.html?id=${item._id}">
+                <a class="col-sm-12 col-md-10 col-lg-4 product-link" href="product.html?id=${item._id}">
                     <div class="product span3">
                         <img class="product-image col-md-12 col-sm-11" src="${item.imageUrl}" />
                         <h3 class="product-name">${item.name}</h3>       
