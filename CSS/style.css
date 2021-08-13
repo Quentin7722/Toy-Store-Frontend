@@ -284,7 +284,6 @@ form {
 .cart-image {
     height: 90px;
     width: 100%;
-    object-fit: contain;
     box-sizing: border-box;
     border: solid;
     border-width: thin;
@@ -420,6 +419,9 @@ label {
         font-size: 40px;
     }
     .brand,
+    .cart-image {
+        object-fit: contain;
+    }
     .nav-link {
         font-size: 25px;
     }
