@@ -190,7 +190,7 @@ function send() {
         products: arrayLoop
     }
 
-    fetch('http://localhost:3000/api/teddies/order', {
+    fetch('https://toy-store1.herokuapp.com/api/order', {
         method: 'post',
         headers: {
             'Content-Type': 'application/json'
