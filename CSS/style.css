@@ -419,9 +419,6 @@ label {
         font-size: 40px;
     }
     .brand,
-    .cart-image {
-        object-fit: contain;
-    }
     .nav-link {
         font-size: 25px;
     }
@@ -475,5 +472,11 @@ label {
     }
     .cart-quantity {
         padding-left: 40px;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .cart-image {
+        object-fit: contain;
     }
 }
