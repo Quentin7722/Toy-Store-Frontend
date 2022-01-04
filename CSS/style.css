@@ -24,7 +24,13 @@ footer {
     padding: 25px;
     color: white;
 }
-
+.brand{
+    color: white;
+}
+.brand:hover{
+    text-decoration: none;
+    color: white;
+}
 .brand,
 .nav-link {
     padding: 0;
@@ -45,8 +51,8 @@ nav {
     padding: 8px 16px;
 }
 
-a.nav-link:hover {
-    color: rgb(245, 228, 0);
+.nav-link:hover {
+    color: rgb(58, 184, 79);
 }
 
 h1 {
@@ -181,7 +187,7 @@ form {
     color: black;
     position: absolute;
     top: 6px;
-    left: 22px;
+    left: 21.5px;
 }
 
 #add-cart {
@@ -337,6 +343,12 @@ label {
     h1 {
         font-size: 25px;
     }
+    header{
+        padding: 10px;
+    }
+    .cart-link{
+        margin-left: 0px;
+    }
     .brand,
     .nav-link {
         font-size: 25px;
@@ -367,7 +379,7 @@ label {
         padding: 50px 0 0 0;
     }
     .form-submit {
-        padding: 0;
+        padding: 25px;
     }
     .title-quantity {
         padding-right: 0px;
@@ -417,6 +429,9 @@ label {
 @media screen and (min-width: 569px) and (max-width: 768px) {
     h1 {
         font-size: 40px;
+    }
+    .fa-inverse{
+        left: 17px;
     }
     .brand,
     .nav-link {
@@ -478,5 +493,8 @@ label {
 @media screen and (max-width: 700px) {
     .cart-image {
         object-fit: contain;
+    }
+    .fa-inverse{
+        left: 17px;
     }
 }
